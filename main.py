@@ -1,17 +1,22 @@
+from entities.Energie import Energie
 from entities.Voiture import Voiture
+from entities.VoitureElectrique import VoitureElectrique
 
 
 def print_hi(name):
+    ma_deuxieme_voiture: Voiture = Voiture('2', Energie.ESSENCE)
+    ma_voiture : VoitureElectrique = VoitureElectrique('2')
 
-    # maVoiture est instance de Voiture
-    # 'une version'
-    ma_voiture : Voiture = Voiture(name)
 
-    ma_deuxieme_voiture: Voiture = Voiture('2')
+    ma_voiture_custom : Voiture = VoitureElectrique('2')
+    ma_voiture_custom: VoitureElectrique = Voiture('2',Energie.ELECTRIQUE)
 
-    mon_nom : str = ma_voiture.donne_moi_le_nom()
+    print(type(ma_voiture_custom))
+
+
     ma_deuxieme_voiture.nom = 50
     print(ma_deuxieme_voiture.nom)
+
 
 if __name__ == '__main__':
     print_hi('PyCharm')
